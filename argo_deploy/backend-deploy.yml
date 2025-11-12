@@ -17,11 +17,11 @@ spec:
     spec:
       containers:
       - name: boot-container
-        image: bynmch/argo_boot:latest
+        image: bynmch/argo_boot:1
         imagePullPolicy: Always
         ports:
         - containerPort: 7777
-        # MariaDB 연결을 위한 환경변수 설정
+        # MariaDB ?�결???�한 ?�경변???�정
         env:
         - name: SPRING_DATASOURCE_URL
           value: "jdbc:mariadb://argo-mariadb-ser:3310/calcdb"
@@ -29,7 +29,7 @@ spec:
           value: "root"
         - name: SPRING_DATASOURCE_PASSWORD
           value: "root1234"
-        # Health Check - Spring Boot가 정상 실행되는지 확인
+        # Health Check - Spring Boot가 ?�상 ?�행?�는지 ?�인
         readinessProbe:
           httpGet:
             path: /health
